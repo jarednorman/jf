@@ -1,0 +1,9 @@
+task "test" do
+  match %r(^jf$) do |m|
+    "cat #{m[0]}"
+  end
+
+  match %r(^\.jf$) do |m|
+    "cat #{m[0]} | sort"
+  end
+end

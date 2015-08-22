@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+action = ARGV.first
+filename = ARGV.last
+success = false
+
+define_method :task do |a, &block|
+  break unless a == action
+  block.call
+end
+
+define_method :match do |regex, &block|
+  regex.match(filename) do |m|
+    success = true
+    system(block.call(m))
+  end
+end
+
+load "./.jf"
+
+unless success
+  puts %(Failed to match action "#{action}" for "#{filename}")
+end
