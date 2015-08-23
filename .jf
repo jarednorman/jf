@@ -1,9 +1,9 @@
 task "test" do
   match %r(^jf$) do |m|
-    "cat #{m[0]}"
+    "cat #{m[0]} && sleep 3"
   end
 
   match %r(^\.jf$) do |m|
-    "cat #{m[0]} | sort"
+    "echo #{m[0]} && false"
   end
 end
