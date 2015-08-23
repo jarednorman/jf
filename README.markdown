@@ -1,6 +1,12 @@
 # jf
 
-Read the source code and figure it out.
+Run commands based on things.
+
+## Installation
+
+Put `jf` somewhere in your path. Add something like `nnoremap <leader>t :!jf
+test %:.<cr><cr>` to your `.vimrc`. Make sure to add `.jf` and `.jfwin` to your
+global git ignores.
 
 ## Example `.jf` file for a Rails project
 
@@ -19,7 +25,3 @@ task "test" do
   end
 end
 ```
-
-## Stuff
-
-Make sure to add `.jf` and `.jfwin` to your global git ignores.
