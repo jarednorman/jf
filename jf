@@ -24,7 +24,7 @@ end
 
 def new_window
   close_windows
-  window = `tmux split-window -l 10 -d -P`.strip
+  window = `tmux split-window -l 16 -d -P`.strip
   save_window(window)
   window
 end
